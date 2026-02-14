@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>6m RIB Specifications &amp; Fleet</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1a2632",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 antialiased selection:bg-primary selection:text-white">
+    <!-- Mobile Container -->
+    <div
+        class="mx-auto max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-hidden border-x border-slate-200 dark:border-slate-800">
+        <!-- ===== TOP NAVIGATION BAR ===== -->
+        <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="flex items-center justify-between h-14">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                            <span class="material-icons text-white text-lg transform -rotate-45">sailing</span>
+                        </div>
+                        <span class="font-bold text-lg tracking-tight text-white">Coach<span
+                                class="text-primary">&</span>Sailor</span>
+                    </a>
+                    <div class="hidden sm:flex items-center gap-1">
+                        <a href="index.html"
+                            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Inicio</a>
+                        <a href="screen_5.html"
+                            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Flota</a>
+                        <a href="screen_2.html"
+                            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Cobertura</a>
+                        <a href="screen_6.html"
+                            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Eventos</a>
+                        <a href="screen_7.html"
+                            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Contacto</a>
+                    </div>
+                    <div class="sm:hidden flex items-center gap-2">
+                        <a href="index.html"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                            <span class="material-icons text-[20px]">home</span>
+                        </a>
+                        <a href="screen_5.html"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                            <span class="material-icons text-[20px]">directions_boat</span>
+                        </a>
+                        <a href="screen_6.html"
+                            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                            <span class="material-icons text-[20px]">event</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Gallery -->
+        <div class="relative h-[45vh] w-full bg-slate-900">
+            <!-- Main Image -->
+            <img alt="A sleek RIB boat speeding through choppy blue water" class="w-full h-full object-cover"
+                data-alt="A sleek RIB boat speeding through choppy blue water"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs7TFXOZ8kR1b8TKYKCe2LTPj0lOBnnShljVAuDfLwYH2AqUpnKNVyysrFIRB_lIT3lrQ_8FYNuELc2fcyHGeAfpMkbUCI4C4nR3hKDTOVbckrvAOIvjECRxvlCn1pSHf9kV6NzunRqlWajwwf_-8MUHAgga9jWyDjNONNAtUqe3bY8DJ9tpgrJC7Qxslunwi1sJS8lhKf1ygm_6YGQzvbyVrBT6poIA_IH4W-NXOut696UAHbww5bC-2_hrfTFNFrPogdxhx8LDE" />
+            <!-- Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+            <!-- Content Overlay -->
+            <div class="absolute bottom-6 left-6 right-6">
+                <div
+                    class="inline-flex items-center px-2.5 py-1 rounded bg-primary/90 backdrop-blur-sm text-white text-xs font-bold mb-3 uppercase tracking-wider">
+                    Top Choice for Coaches
+                </div>
+                <h1 class="text-3xl font-bold text-white mb-1 leading-tight">VSR 6.0 Pro</h1>
+                <p class="text-slate-300 text-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-primary text-base">location_on</span>
+                    Available in Barcelona, Palma &amp; Valencia
+                </p>
+            </div>
+            <!-- Gallery Indicators -->
+            <div class="absolute bottom-6 right-6 flex gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                <div class="w-2 h-2 rounded-full bg-white/30"></div>
+                <div class="w-2 h-2 rounded-full bg-white/30"></div>
+                <div class="w-2 h-2 rounded-full bg-white/30"></div>
+            </div>
+        </div>
+        <!-- Main Content Area -->
+        <div class="px-6 pb-24 -mt-4 relative z-10">
+            <!-- Quick Specs Scroll -->
+            <div class="flex gap-3 overflow-x-auto no-scrollbar pb-6">
+                <!-- Spec Card 1 -->
+                <div
+                    class="flex-shrink-0 w-28 bg-surface-dark border border-slate-700/50 p-3 rounded-xl flex flex-col items-center justify-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-lg">speed</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-slate-400 font-medium uppercase">Engine</p>
+                        <p class="text-sm font-bold text-white">70 HP</p>
+                    </div>
+                </div>
+                <!-- Spec Card 2 -->
+                <div
+                    class="flex-shrink-0 w-28 bg-surface-dark border border-slate-700/50 p-3 rounded-xl flex flex-col items-center justify-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-lg">straighten</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-slate-400 font-medium uppercase">Length</p>
+                        <p class="text-sm font-bold text-white">6.0m</p>
+                    </div>
+                </div>
+                <!-- Spec Card 3 -->
+                <div
+                    class="flex-shrink-0 w-28 bg-surface-dark border border-slate-700/50 p-3 rounded-xl flex flex-col items-center justify-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-lg">group</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-slate-400 font-medium uppercase">Capacity</p>
+                        <p class="text-sm font-bold text-white">6 Pax</p>
+                    </div>
+                </div>
+                <!-- Spec Card 4 -->
+                <div
+                    class="flex-shrink-0 w-28 bg-surface-dark border border-slate-700/50 p-3 rounded-xl flex flex-col items-center justify-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-lg">local_gas_station</span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-slate-400 font-medium uppercase">Fuel</p>
+                        <p class="text-sm font-bold text-white">25L + Res</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Description -->
+            <div class="mb-8">
+                <h2 class="text-lg font-bold text-white mb-3">Coach Optimized</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Designed specifically for high-performance coaching. The VSR 6.0 features a narrow hull for low wake
+                    generation, critical for dinghy fleets like Laser, Optimist, and 49er. Its high maneuverability and
+                    stability make it the perfect platform for long days on the water.
+                </p>
+            </div>
+            <!-- Detailed Specifications Grid -->
+            <div class="mb-8">
+                <h2 class="text-lg font-bold text-white mb-4">Technical Details</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-surface-dark p-4 rounded-xl border border-slate-700/50">
+                        <p class="text-xs text-slate-500 uppercase mb-1">Make / Model</p>
+                        <p class="text-white font-semibold">VSR 5.8 / 6.0</p>
+                    </div>
+                    <div class="bg-surface-dark p-4 rounded-xl border border-slate-700/50">
+                        <p class="text-xs text-slate-500 uppercase mb-1">Hull Type</p>
+                        <p class="text-white font-semibold">Deep V Fiberglass</p>
+                    </div>
+                    <div class="bg-surface-dark p-4 rounded-xl border border-slate-700/50">
+                        <p class="text-xs text-slate-500 uppercase mb-1">Engine Brand</p>
+                        <p class="text-white font-semibold">Yamaha 4-Stroke</p>
+                    </div>
+                    <div class="bg-surface-dark p-4 rounded-xl border border-slate-700/50">
+                        <p class="text-xs text-slate-500 uppercase mb-1">Tow Post</p>
+                        <p class="text-white font-semibold">Stainless Steel</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Safety Equipment List -->
+            <div class="mb-8">
+                <h2 class="text-lg font-bold text-white mb-4">Included Safety Gear</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 bg-surface-dark/50 p-3 rounded-lg border border-slate-800">
+                        <span class="material-symbols-outlined text-primary">radio</span>
+                        <span class="text-sm text-slate-300">VHF Marine Radio</span>
+                    </li>
+                    <li class="flex items-center gap-3 bg-surface-dark/50 p-3 rounded-lg border border-slate-800">
+                        <span class="material-symbols-outlined text-primary">medical_services</span>
+                        <span class="text-sm text-slate-300">First Aid Kit</span>
+                    </li>
+                    <li class="flex items-center gap-3 bg-surface-dark/50 p-3 rounded-lg border border-slate-800">
+                        <span class="material-symbols-outlined text-primary">anchor</span>
+                        <span class="text-sm text-slate-300">Anchor &amp; Chain</span>
+                    </li>
+                    <li class="flex items-center gap-3 bg-surface-dark/50 p-3 rounded-lg border border-slate-800">
+                        <span class="material-symbols-outlined text-primary">settings</span>
+                        <span class="text-sm text-slate-300">Propeller Guard</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Gallery Grid -->
+            <div class="mb-8">
+                <h2 class="text-lg font-bold text-white mb-4">On The Water</h2>
+                <div class="grid grid-cols-2 gap-2 h-48">
+                    <div class="relative rounded-lg overflow-hidden h-full">
+                        <img alt="Coach on a RIB watching sailboats in the distance"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            data-alt="Coach on a RIB watching sailboats in the distance"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ9rsDiITUAKkmNh6Mh63N9VyEFDBn_pQPrfGwhz0XDtW1sUKOOHJ6bZyqB99-8jn2LcAZFezt4WgaeOxHejvIhfNVA7BHzYWWQmjfeU4UfpoIW_DMkce1wGtjlQ8XYdxhD6GNkVMC7p8f1BvIAd58hWpxdOxMsDZn25N2EvQ-2k-pmGKwv36qRA85sMqNe-AXgxmpTLFCMFHWKm57qN0RGBEDo3WN1tK212vqmdMQd3iQCjEzPZ-9wBJ7zqceDKWqmVUcvxVeNI4" />
+                    </div>
+                    <div class="grid grid-rows-2 gap-2 h-full">
+                        <div class="relative rounded-lg overflow-hidden h-full">
+                            <img alt="Close up detail of RIB boat engine and steering console"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                data-alt="Close up detail of RIB boat engine and steering console"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ917GoJBW-VekSi1fnmfMxvs9JKj7lOYPoTDDYLv365mmDOk7rr9JfQSz8aqSVQDw_Ww7O1cz-9zdi1h67vbO4oa9Od3kteUy1FXXxAum6IlxYFroVTb4Ra9GEFSzfxc1ZxWWi4cfrCT_UXzbUa_Ywj_oBLdhTFbL_BhiG11dzfWaXnknvai6sdgE2k_jP1FTgl-8w1bP0DSj8Fqeg1t3KFwzn3Wfpa1M3fA0gATDpK-wCgCsmeirAnAZoIVQcaTU9ke9h4AXWaw" />
+                        </div>
+                        <div class="relative rounded-lg overflow-hidden h-full group">
+                            <img alt="Sailing regatta with support boats in background"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Sailing regatta with support boats in background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs1bAuUJkFSFJ3EGpahb4oC6bQwYq5lOIHchj-tcdbGtIqa8uozAgUGWB8kCUC4idE1uCPG0Bk0EuXkMB4apZWIpCeeTJPkdNmdP5EiVw9oxUou1RhHaE6zYiu1ALj-zlWm8DGQ7j4veMTQNbGxthIqq57FcWP2ErBJOuVKNZicgIqr_Oet98Ej8bh51Da6eWc604y7LP7SJnaB3ad26FqiW0kTAAUMiEvfZ-2wL4qWOOUaJ9Gb7xAM4v9a1Y57QB5_11sYiAUtJY" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <span class="text-white text-sm font-semibold">+5 Photos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sticky Bottom Bar -->
+        <div
+            class="fixed bottom-0 left-0 right-0 p-4 bg-background-dark/80 backdrop-blur-lg border-t border-slate-800 z-50 flex items-center justify-between max-w-md mx-auto">
+            <div class="flex flex-col">
+                <span class="text-xs text-slate-400">Daily Rate</span>
+                <span class="text-xl font-bold text-white">€250 <span class="text-sm font-normal text-slate-400">/
+                        day</span></span>
+            </div>
+            <button
+                class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/25 transition-all active:scale-95">
+                Book Fleet
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fleet Catalog - Professional RIB Rentals</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #283039;
+            border-radius: 10px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- ===== TOP NAVIGATION BAR ===== -->
+    <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-14">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span class="material-icons text-white text-lg transform -rotate-45">sailing</span>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-white">Coach<span
+                            class="text-primary">&</span>Sailor</span>
+                </a>
+                <div class="hidden sm:flex items-center gap-1">
+                    <a href="index.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Inicio</a>
+                    <a href="screen_5.html"
+                        class="px-3 py-2 rounded-lg text-sm font-semibold text-white bg-white/10">Flota</a>
+                    <a href="screen_2.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Cobertura</a>
+                    <a href="screen_6.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Eventos</a>
+                    <a href="screen_7.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Contacto</a>
+                </div>
+                <div class="sm:hidden flex items-center gap-2">
+                    <a href="index.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">home</span>
+                    </a>
+                    <a href="screen_6.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">event</span>
+                    </a>
+                    <a href="screen_7.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-1 max-w-7xl mx-auto w-full pb-24">
+        <!-- Search Section -->
+        <div class="px-4 py-6">
+            <div class="relative group">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <span
+                        class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                </div>
+                <input
+                    class="block w-full pl-11 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400"
+                    placeholder="Search professional RIB models..." type="text" />
+            </div>
+        </div>
+        <!-- Filter Pills -->
+        <div class="flex gap-3 px-4 pb-6 overflow-x-auto custom-scrollbar no-scrollbar">
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-white shadow-lg shadow-primary/20">
+                <span class="text-sm font-semibold">All Boats</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
+                <span class="text-sm font-medium">Coaching</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
+                <span class="text-sm font-medium">Leisure</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
+                <span class="text-sm font-medium">High-Speed</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
+                <span class="text-sm font-medium">Racing</span>
+            </button>
+        </div>
+        <!-- Fleet Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            <!-- Boat Card 1 -->
+            <div
+                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="absolute top-3 left-3 z-10">
+                        <span
+                            class="bg-primary/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Popular</span>
+                    </div>
+                    <!-- ... image ... -->
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Modern white VSR 5.8 RIB boat on water"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCm6HGrRiIv7gAikvGOmXLSC0GZkan-75Fh3Cfj3bNJyZF4huMnCC6K22cNPhHb87udoQdIo1GqnQsh2WoOp2eGHksBHpOo0R2N3cnz2u2zLxFXGZQLucOo7nQsS8Wr38kLRPwPiyRu7XX9mSSPQjKw8DxBrFu5DLpBHyOaSCaJmbFPkiLyuBHXM7kFNjSCuqzBIFB5Xg0SOynEyE7lpQI5HlMMwaIuhiJ2L1PRc585Gp6ClBlEMFknE0ZJo-FrPPHPjBGSWtPExSc");'>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-3 left-4 text-white">
+                        <span class="text-xs font-medium opacity-80">Yamaha 50hp</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <!-- ... details ... -->
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold leading-tight">Vorteq 5.2m</h3>
+                        <div class="flex items-center text-amber-500">
+                            <span class="material-symbols-outlined text-sm">star</span>
+                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">4.9</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">person</span>
+                            <span>6 Pers</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">speed</span>
+                            <span>25 kn</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-lg font-bold text-primary">€170<span
+                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                        </div>
+                        <button onclick="window.location.href='screen_3.html'"
+                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
+                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Boat Card 2 -->
+            <div
+                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="absolute top-3 left-3 z-10">
+                        <span
+                            class="bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Available</span>
+                    </div>
+                    <!-- ... image ... -->
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Sleek black VSR 6.0 RIB motorboat at sea"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs");'>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-3 left-4 text-white">
+                        <span class="text-xs font-medium opacity-80">Yamaha 100hp</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <!-- ... details ... -->
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold leading-tight">Tornado Coach 6.0m</h3>
+                        <div class="flex items-center text-amber-500">
+                            <span class="material-symbols-outlined text-sm">star</span>
+                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">5.0</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">person</span>
+                            <span>8 Pers</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">speed</span>
+                            <span>42 kn</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-lg font-bold text-primary">€200<span
+                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                        </div>
+                        <button onclick="window.location.href='screen_3.html'"
+                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
+                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Boat Card 3 -->
+            <div
+                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
+                <!-- ... image ... -->
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <div class="absolute top-3 right-3 z-10">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md text-white hover:bg-primary transition-colors">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                        </div>
+                        <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Robust Vanguard 6m RIB rescue boat style"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2WYsF15sIN7Z7_HUF0kpeUBCiRGR5lwM9yI_8uNOEP4vj883unYw0BZKLf_NIe4eplf9fB-2EbNEAijpF26ti5WA0EeIyzg-zOmgNoJvXCSsfpq3wwxZZR4eHirzyYKVgMv2EZT-vdTXLnzsgx-efcvl4n8rbYk7rGubVgFlgg4UCdBRdlTpRR8aI9Wa2xdl863Maif0ShGeHvuf1eAdgFZ1G9K7yHc31mGI_THzrx_51I8aMYa741ZKVqwynQXNQb5JSV3J1css");'>
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent">
+                        </div>
+                        <div class="absolute bottom-3 left-4 text-white">
+                            <span class="text-xs font-medium opacity-80">Yamaha 115hp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold leading-tight">AVA 6.3m</h3>
+                        <div class="flex items-center text-amber-500">
+                            <span class="material-symbols-outlined text-sm">star</span>
+                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">4.8</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">person</span>
+                            <span>10 Pers</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">speed</span>
+                            <span>38 kn</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-lg font-bold text-primary">€220<span
+                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                        </div>
+                        <button onclick="window.location.href='screen_3.html'"
+                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
+                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Boat Card 4 -->
+            <div
+                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="absolute top-3 left-3 z-10">
+                        <span
+                            class="bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Available</span>
+                    </div>
+                    <!-- ... image ... -->
+                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Sleek black VSR 6.0 RIB motorboat at sea"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs");'>
+                    </div>
+                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-3 left-4 text-white">
+                        <span class="text-xs font-medium opacity-80">Yamaha 150hp</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <!-- ... details ... -->
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold leading-tight">VSR 6.5m</h3>
+                        <div class="flex items-center text-amber-500">
+                            <span class="material-symbols-outlined text-sm">star</span>
+                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">5.0</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">person</span>
+                            <span>8 Pers</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">speed</span>
+                            <span>42 kn</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div>
+                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-lg font-bold text-primary">€240<span
+                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                        </div>
+                        <button onclick="window.location.href='screen_3.html'"
+                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
+                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body>
+
+</html>

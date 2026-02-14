@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Coach & Sailor - Alquiler de Neumáticas para Vela Ligera</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-white antialiased h-screen flex flex-col overflow-hidden">
+
+    <!-- ===== TOP NAVIGATION BAR ===== -->
+    <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-14">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span class="material-icons text-white text-lg transform -rotate-45">sailing</span>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-white">Coach<span
+                            class="text-primary">&</span>Sailor</span>
+                </a>
+                <!-- Nav Links -->
+                <div class="hidden sm:flex items-center gap-1">
+                    <a href="index.html"
+                        class="px-3 py-2 rounded-lg text-sm font-semibold text-white bg-white/10">Inicio</a>
+                    <a href="screen_5.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Flota</a>
+                    <a href="screen_2.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Cobertura</a>
+                    <a href="screen_6.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Eventos</a>
+                    <a href="screen_7.html"
+                        class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Contacto</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden flex items-center gap-2">
+                    <a href="screen_5.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">directions_boat</span>
+                    </a>
+                    <a href="screen_6.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">event</span>
+                    </a>
+                    <a href="screen_7.html"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+                        <span class="material-icons text-[20px]">mail</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT - Viewport Height, No Scroll ===== -->
+    <main class="relative flex-1 flex flex-col overflow-hidden">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img alt="Rigid Inflatable Boat speeding on water" class="w-full h-full object-cover object-center"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASvBIyab4P6El96-LwnokyJ5H9wX-ROQB6KxJAYVPefX-56NSG4qB1wYFxegIveiaemyJxBRG8FrgZJTnhuD2P0WEuXTgHxSTuCy4BUu1dac62-_2IsMeuClHtkej1jYz4tU9j7WdIanK_bhUaYTRVOuAIGiKTpFcq5493x43QC1VBkJd91QZ8mOWyAJE1SyP0Bc4xOpu1nY1Z6cENITTZktrCvGTPFiasOuAhyht-kPdbR_Ty1LOjGHMqmqkaDyIBm11WTFfQgak" />
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-background-dark/30 via-background-dark/20 to-background-dark">
+            </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex-1 flex flex-col">
+            <!-- Top Section: Hero Text -->
+            <div class="flex-1 flex flex-col justify-center px-6 max-w-2xl">
+                <div
+                    class="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm mb-4">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wide">Disponible en toda Europa</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight text-white mb-3 drop-shadow-lg">
+                    Alquiler de <br />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-300">Neumáticas</span>
+                    <br />para Vela Ligera
+                </h1>
+                <p class="text-gray-300 text-base leading-relaxed mb-5 max-w-md">
+                    Logística experta para regatas y entrenamientos. Flota premium lista para tu próximo evento.
+                </p>
+                <!-- CTA Buttons -->
+                <div class="flex gap-3 mb-4 w-full sm:max-w-md">
+                    <button onclick="window.location.href='screen_5.html'"
+                        class="flex-1 py-3 px-5 rounded-lg bg-primary hover:bg-blue-600 active:bg-blue-700 text-white font-bold text-center shadow-lg shadow-primary/25 transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                        <span>Ver Flota</span>
+                        <span class="material-icons text-sm">arrow_forward</span>
+                    </button>
+                    <button onclick="window.location.href='screen_7.html'"
+                        class="flex-1 py-3 px-5 rounded-lg bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 text-white font-semibold text-center transition-all flex items-center justify-center gap-2">
+                        <span>Contactar</span>
+                    </button>
+                </div>
+                <!-- Trust Indicators -->
+                <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 max-w-md">
+                    <div class="flex flex-col items-center text-center">
+                        <span class="material-icons text-primary text-lg mb-0.5">speed</span>
+                        <span class="text-[10px] text-gray-400">Motores</span>
+                        <span class="text-xs font-bold text-white">Yamaha</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center border-l border-white/10">
+                        <span class="material-icons text-primary text-lg mb-0.5">straighten</span>
+                        <span class="text-[10px] text-gray-400">Eslora</span>
+                        <span class="text-xs font-bold text-white">5–6.5 Metros</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center border-l border-white/10">
+                        <span class="material-icons text-primary text-lg mb-0.5">support_agent</span>
+                        <span class="text-[10px] text-gray-400">Soporte</span>
+                        <span class="text-xs font-bold text-white">24/7</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Services Strip -->
+            <div class="relative z-20 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 pt-4 pb-5 px-0">
+                <div class="px-6 mb-3 flex justify-between items-end">
+                    <h2 class="text-base font-bold text-white">Servicios</h2>
+                    <a class="text-xs text-primary font-medium" href="screen_5.html">Ver todo →</a>
+                </div>
+                <div class="flex overflow-x-auto hide-scrollbar gap-3 px-6 pb-1 snap-x snap-mandatory">
+                    <!-- Card 1 -->
+                    <div onclick="window.location.href='screen_3.html'"
+                        class="snap-center shrink-0 w-44 h-24 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group relative overflow-hidden">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-background-dark flex items-center justify-center border border-white/5">
+                            <span class="material-icons text-primary text-sm">sailing</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Coach Boats</h3>
+                            <p class="text-[10px] text-gray-400">Para entrenadores</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div onclick="window.location.href='screen_6.html'"
+                        class="snap-center shrink-0 w-44 h-24 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group relative overflow-hidden">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-background-dark flex items-center justify-center border border-white/5">
+                            <span class="material-icons text-primary text-sm">flag</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Eventos</h3>
+                            <p class="text-[10px] text-gray-400">Soporte de regatas</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div onclick="window.location.href='screen_2.html'"
+                        class="snap-center shrink-0 w-44 h-24 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col justify-between hover:bg-white/10 transition-colors cursor-pointer group relative overflow-hidden">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-background-dark flex items-center justify-center border border-white/5">
+                            <span class="material-icons text-primary text-sm">local_shipping</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Transporte</h3>
+                            <p class="text-[10px] text-gray-400">Logística europea</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sailing Events - RIB Rentals</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #283039;
+      border-radius: 10px;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">
+  <!-- ===== TOP NAVIGATION BAR ===== -->
+  <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+            <span class="material-icons text-white text-lg transform -rotate-45">sailing</span>
+          </div>
+          <span class="font-bold text-lg tracking-tight text-white">Coach<span
+              class="text-primary">&</span>Sailor</span>
+        </a>
+        <div class="hidden sm:flex items-center gap-1">
+          <a href="index.html"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Inicio</a>
+          <a href="screen_5.html"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Flota</a>
+          <a href="screen_2.html"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Cobertura</a>
+          <a href="screen_6.html" class="px-3 py-2 rounded-lg text-sm font-semibold text-white bg-white/10">Eventos</a>
+          <a href="screen_7.html"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Contacto</a>
+        </div>
+        <div class="sm:hidden flex items-center gap-2">
+          <a href="index.html"
+            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+            <span class="material-icons text-[20px]">home</span>
+          </a>
+          <a href="screen_5.html"
+            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+            <span class="material-icons text-[20px]">directions_boat</span>
+          </a>
+          <a href="screen_7.html"
+            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
+            <span class="material-icons text-[20px]">mail</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Tabs / Categories -->
+  <div class="max-w-2xl mx-auto w-full overflow-x-auto custom-scrollbar">
+    <div class="flex px-4 gap-6">
+      <a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2 shrink-0"
+        href="#">
+        <p class="text-sm font-bold">Todos</p>
+      </a>
+      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
+        href="#">
+        <p class="text-sm font-medium">Palma</p>
+      </a>
+      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
+        href="#">
+        <p class="text-sm font-medium">Barcelona</p>
+      </a>
+      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
+        href="#">
+        <p class="text-sm font-medium">Valencia</p>
+      </a>
+      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
+        href="#">
+        <p class="text-sm font-medium">Ibiza</p>
+      </a>
+    </div>
+  </div>
+  </header>
+  <main class="flex-1 max-w-2xl mx-auto w-full p-4 space-y-6">
+    <div class="flex items-center justify-between">
+      <h3 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">Regatas Destacadas</h3>
+      <span
+        class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full uppercase tracking-wider">Temporada
+        2024</span>
+    </div>
+    <!-- Event Card 1 -->
+    <div class="group @container">
+      <div
+        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
+        <div class="relative w-full aspect-[21/9] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+          <div
+            class="absolute top-3 right-3 z-20 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
+            RIBs Disponibles</div>
+          <div
+            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+            data-alt="Modern sailboat racing on deep blue ocean water"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCESj5RjeO1e7soVVF3iih9ZcDD5IyglCB0kGpbIXYgxOunL_JNwaZoS6zc8MGv39XgVgoRDolPoyfiitQanD6hhXj-RemqgsL82oDHcjAQJEjyWAxFz9F1Mxkl4ZgSI2_iOlCOeb6EKTUw4bbSbseYx-revUHKyfuvxEPiiCZe6Zu-VWgWkEhVCxu5G50MO0WKPu5Cqs6fw4n0JCsa16Fw-lkALdI4N6xsdCtOf0qTnxlh5BejFojh_wR941z9nSDW6X51USVwW40");'>
+          </div>
+        </div>
+        <div class="flex w-full flex-col gap-4 p-5">
+          <div class="flex flex-col gap-1">
+            <p class="text-primary text-xs font-bold uppercase tracking-widest">Olympic Class</p>
+            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Trofeo Princesa Sofía</h4>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">calendar_today</span>
+              <p class="text-sm font-medium leading-none">1 - 6 de Abril, 2024</p>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+              <p class="text-sm font-medium leading-none">Palma de Mallorca, España</p>
+            </div>
+          </div>
+          <button
+            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
+            <span>Reservar para este evento</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Event Card 2 -->
+    <div class="group @container">
+      <div
+        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
+        <div class="relative w-full aspect-[21/9] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+          <div
+            class="absolute top-3 right-3 z-20 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
+            Soporte Técnico</div>
+          <div
+            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+            data-alt="Aerial view of yacht club with many boats"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgWUN4D00J15kDLudQCIM5DJwE6bf-FuzLHbIFnK4aUY4eWA5M1Uh0vYgL28o64acwTESjRRD0IhLnLHpb4yRtsfCd0kvDl-xZHDnOETgaBjOZapleJmyVaGaWnnDKcDoqqTzxdDGSImNRloH7GQy3A9YDqD1Iur9SYs1MPa1ERoR91pdV6mdo1mBcXkpDzlMmYbVhMkCC1A19pjKJTT7AdQwQXdDGuGR4J6odsVnLeh86bDEePmuvEPm-JC0VU104E5EiK7YPBE4");'>
+          </div>
+        </div>
+        <div class="flex w-full flex-col gap-4 p-5">
+          <div class="flex flex-col gap-1">
+            <p class="text-primary text-xs font-bold uppercase tracking-widest">Major Event</p>
+            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Copa del Rey MAPFRE</h4>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">calendar_today</span>
+              <p class="text-sm font-medium leading-none">27 Julio - 3 Agosto, 2024</p>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+              <p class="text-sm font-medium leading-none">Real Club Náutico de Palma, España</p>
+            </div>
+          </div>
+          <button
+            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
+            <span>Reservar para este evento</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Event Card 3 -->
+    <div class="group @container">
+      <div
+        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
+        <div class="relative w-full aspect-[21/9] overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+          <div
+            class="absolute top-3 right-3 z-20 bg-slate-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
+            Pocas Plazas</div>
+          <div
+            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+            data-alt="Luxury sailing yacht in open ocean"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs1YmzCLOeaB-6SPWNhL4bi2ZuVx94wnkF1oYByMjAhOBjcjpqOq87sD00b3gVVggT-pIEn06zP1-HAif4qo3OFGCUHPzyroas2GCUXdCrGahJN_gCRhb9l4ceS2s34SrbmgeacRCwuPjsLL6LNn36sxh_9BZLwKTdaUEBqxRJLRLzFUHH0jgBEJUcJHtSLdLUREq2or4ekjDNPujwpZl7mBGZ5-sxOb24UdGMUSIXcCo61uImpLIenakBHLKYB4NzYYhjvujPypM");'>
+          </div>
+        </div>
+        <div class="flex w-full flex-col gap-4 p-5">
+          <div class="flex flex-col gap-1">
+            <p class="text-primary text-xs font-bold uppercase tracking-widest">World Championship</p>
+            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">ORC World Championship</h4>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">calendar_today</span>
+              <p class="text-sm font-medium leading-none">20 - 27 Septiembre, 2024</p>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+              <span class="material-symbols-outlined text-lg">location_on</span>
+              <p class="text-sm font-medium leading-none">Barcelona, España</p>
+            </div>
+          </div>
+          <button
+            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
+            <span>Reservar para este evento</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
