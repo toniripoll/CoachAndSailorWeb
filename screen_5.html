@@ -1,71 +1,69 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html class="dark" lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Fleet Catalog - Professional RIB Rentals</title>
+    <title>Flota — Coach & Sailor</title>
+    <meta name="description"
+        content="Flota profesional para coaching y regata: RIBs optimizadas y 470 Ziegelmayer 2020 en perfectas condiciones.">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
+                        primary: "#137fec",
                         "background-dark": "#101922",
+                        "surface-dark": "#172030",
+                        "card-dark": "#1c2530",
                     },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"] },
                 },
             },
         }
     </script>
     <style>
-        body {
-            font-family: "Plus Jakarta Sans", sans-serif;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .custom-scrollbar::-webkit-scrollbar {
-            height: 4px;
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #283039;
-            border-radius: 10px;
+        /* Favorite heart fill */
+        .fav-active {
+            font-variation-settings: 'FILL' 1;
+            color: #ef4444;
         }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
+
+        /* Card hover glow */
+        .card-glow:hover {
+            box-shadow: 0 0 0 1px rgba(19, 127, 236, 0.25), 0 8px 30px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
-    <!-- ===== TOP NAVIGATION BAR ===== -->
+<body class="bg-background-dark font-display text-white antialiased min-h-screen flex flex-col">
+
+    <!-- ===== NAV ===== -->
     <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
             <div class="flex items-center justify-between h-14">
                 <a href="index.html" class="flex items-center gap-2">
                     <div
@@ -89,284 +87,627 @@
                 </div>
                 <div class="sm:hidden flex items-center gap-2">
                     <a href="index.html"
-                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
-                        <span class="material-icons text-[20px]">home</span>
-                    </a>
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors"><span
+                            class="material-icons text-[20px]">home</span></a>
                     <a href="screen_6.html"
-                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
-                        <span class="material-icons text-[20px]">event</span>
-                    </a>
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors"><span
+                            class="material-icons text-[20px]">event</span></a>
                     <a href="screen_7.html"
-                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors">
-                        <span class="material-icons text-[20px]">mail</span>
-                    </a>
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white transition-colors"><span
+                            class="material-icons text-[20px]">mail</span></a>
                 </div>
             </div>
         </div>
     </nav>
-    <main class="flex-1 max-w-7xl mx-auto w-full pb-24">
-        <!-- Search Section -->
-        <div class="px-4 py-6">
-            <div class="relative group">
-                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  1) HERO — compact, informative, real image                -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="relative w-full overflow-hidden" style="height: clamp(260px, 40vh, 420px);">
+        <img alt="RIB profesional de coaching en aguas de regata" class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs7TFXOZ8kR1b8TKYKCe2LTPj0lOBnnShljVAuDfLwYH2AqUpnKNVyysrFIRB_lIT3lrQ_8FYNuELc2fcyHGeAfpMkbUCI4C4nR3hKDTOVbckrvAOIvjECRxvlCn1pSHf9kV6NzunRqlWajwwf_-8MUHAgga9jWyDjNONNAtUqe3bY8DJ9tpgrJC7Qxslunwi1sJS8lhKf1ygm_6YGQzvbyVrBT6poIA_IH4W-NXOut696UAHbww5bC-2_hrfTFNFrPogdxhx8LDE" />
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-background-dark/60 to-transparent"></div>
+        <div class="absolute bottom-0 inset-x-0">
+            <div class="max-w-[1280px] mx-auto px-6 pb-8">
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-2 max-w-2xl">
+                    Flota profesional para entrenos y regata
+                </h1>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mb-5">
+                    RIBs optimizadas para coaches + 470 Ziegelmayer (2020) en condiciones perfectas.
+                </p>
+                <!-- Chips -->
+                <div class="flex flex-wrap gap-2 mb-5">
                     <span
-                        class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                        class="px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-1.5">
+                        <span class="material-icons text-primary text-sm">groups</span> Coaching
+                    </span>
+                    <span
+                        class="px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-1.5">
+                        <span class="material-icons text-primary text-sm">build</span> Soporte técnico
+                    </span>
+                    <span
+                        class="px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-1.5">
+                        <span class="material-icons text-primary text-sm">emoji_events</span> Racing
+                    </span>
                 </div>
-                <input
-                    class="block w-full pl-11 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400"
-                    placeholder="Search professional RIB models..." type="text" />
+                <!-- CTAs -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="screen_7.html"
+                        class="px-6 py-3 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2">
+                        Solicitar disponibilidad <span class="material-icons text-lg">arrow_forward</span>
+                    </a>
+                    <a href="#seccion-470"
+                        class="px-6 py-3 rounded-xl bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        Ver el 470 <span class="material-icons text-lg">sailing</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- Filter Pills -->
-        <div class="flex gap-3 px-4 pb-6 overflow-x-auto custom-scrollbar no-scrollbar">
-            <button
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-white shadow-lg shadow-primary/20">
-                <span class="text-sm font-semibold">All Boats</span>
-            </button>
-            <button
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
-                <span class="text-sm font-medium">Coaching</span>
-            </button>
-            <button
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
-                <span class="text-sm font-medium">Leisure</span>
-            </button>
-            <button
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
-                <span class="text-sm font-medium">High-Speed</span>
-            </button>
-            <button
-                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-5 hover:border-primary transition-colors">
-                <span class="text-sm font-medium">Racing</span>
-            </button>
-        </div>
-        <!-- Fleet Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-            <!-- Boat Card 1 -->
-            <div
-                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
-                <div class="relative aspect-[4/3] overflow-hidden">
-                    <div class="absolute top-3 left-3 z-10">
-                        <span
-                            class="bg-primary/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Popular</span>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  2) FEATURED / RECOMENDADO                                 -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="max-w-[1280px] mx-auto w-full px-6 py-10">
+        <div
+            class="bg-card-dark rounded-2xl border border-white/5 overflow-hidden flex flex-col lg:flex-row card-glow transition-all duration-300 lg:max-h-[260px]">
+            <!-- Image -->
+            <div class="lg:w-2/5 h-44 sm:h-48 lg:h-auto relative overflow-hidden">
+                <img alt="Tornado Coach 6.0m — RIB recomendada para coaching profesional"
+                    class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-500"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs" />
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-card-dark/60 hidden lg:block"></div>
+                <span
+                    class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-amber-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
+                    <span class="material-icons text-xs">star</span> Recomendado
+                </span>
+            </div>
+            <!-- Content -->
+            <div class="lg:w-3/5 p-5 lg:p-6 flex flex-col justify-center">
+                <h2 class="text-lg sm:text-xl font-extrabold text-white mb-1">Tornado Coach 6.0m</h2>
+                <p class="text-gray-400 text-xs mb-3">Ideal para seguimiento de flotas y jornadas largas. Motor potente,
+                    mínima estela.</p>
+                <!-- KPIs -->
+                <div class="flex flex-wrap gap-4 mb-3">
+                    <div class="flex items-center gap-1.5 text-gray-300">
+                        <span class="material-icons text-primary text-base">straighten</span>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold">Eslora</p>
+                            <p class="text-xs font-bold">6.0 m</p>
+                        </div>
                     </div>
-                    <!-- ... image ... -->
-                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Modern white VSR 5.8 RIB boat on water"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCm6HGrRiIv7gAikvGOmXLSC0GZkan-75Fh3Cfj3bNJyZF4huMnCC6K22cNPhHb87udoQdIo1GqnQsh2WoOp2eGHksBHpOo0R2N3cnz2u2zLxFXGZQLucOo7nQsS8Wr38kLRPwPiyRu7XX9mSSPQjKw8DxBrFu5DLpBHyOaSCaJmbFPkiLyuBHXM7kFNjSCuqzBIFB5Xg0SOynEyE7lpQI5HlMMwaIuhiJ2L1PRc585Gp6ClBlEMFknE0ZJo-FrPPHPjBGSWtPExSc");'>
+                    <div class="flex items-center gap-1.5 text-gray-300">
+                        <span class="material-icons text-primary text-base">group</span>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold">Plazas</p>
+                            <p class="text-xs font-bold">8 pers.</p>
+                        </div>
                     </div>
-                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-3 left-4 text-white">
-                        <span class="text-xs font-medium opacity-80">Yamaha 50hp</span>
+                    <div class="flex items-center gap-1.5 text-gray-300">
+                        <span class="material-icons text-primary text-base">speed</span>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold">Velocidad</p>
+                            <p class="text-xs font-bold">42 kn</p>
+                        </div>
                     </div>
                 </div>
-                <div class="p-5">
-                    <!-- ... details ... -->
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-lg font-bold leading-tight">Vorteq 5.2m</h3>
-                        <div class="flex items-center text-amber-500">
-                            <span class="material-symbols-outlined text-sm">star</span>
-                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">4.9</span>
-                        </div>
+                <p class="text-xs text-primary font-bold mb-3 flex items-center gap-1">
+                    <span class="material-icons text-xs">check_circle</span> Desde €200/día
+                </p>
+                <!-- CTAs -->
+                <div class="flex flex-wrap gap-2">
+                    <a href="screen_7.html"
+                        class="px-4 py-2 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-1.5">
+                        Solicitar disponibilidad <span class="material-icons text-sm">arrow_forward</span>
+                    </a>
+                    <a href="screen_3.html"
+                        class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs hover:bg-white/10 transition-colors">
+                        Ver detalles
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  3) COLECCIONES (by use-case)                              -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+
+    <!-- ── COACHING ────────────────────────────────────────────── -->
+    <section class="max-w-[1280px] mx-auto w-full px-6 pb-14">
+        <div class="mb-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white mb-1">RIBs para Coaching</h2>
+            <p class="text-gray-400 text-sm">Estables, maniobrables y pensadas para jornadas largas.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            <!-- Card: Vorteq 5.2m -->
+            <div
+                class="group bg-card-dark rounded-2xl border border-white/5 overflow-hidden card-glow transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img alt="Vorteq 5.2m — RIB compacta para coaching"
+                        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm6HGrRiIv7gAikvGOmXLSC0GZkan-75Fh3Cfj3bNJyZF4huMnCC6K22cNPhHb87udoQdIo1GqnQsh2WoOp2eGHksBHpOo0R2N3cnz2u2zLxFXGZQLucOo7nQsS8Wr38kLRPwPiyRu7XX9mSSPQjKw8DxBrFu5DLpBHyOaSCaJmbFPkiLyuBHXM7kFNjSCuqzBIFB5Xg0SOynEyE7lpQI5HlMMwaIuhiJ2L1PRc585Gp6ClBlEMFknE0ZJo-FrPPHPjBGSWtPExSc" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-card-dark/70 to-transparent"></div>
+                    <!-- Favorite -->
+                    <button onclick="this.querySelector('span').classList.toggle('fav-active')"
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/50 transition-colors group/fav"
+                        title="Añadir a favoritos">
+                        <span class="material-symbols-outlined text-white text-xl transition-colors">favorite</span>
+                    </button>
+                    <!-- Chips on image -->
+                    <div class="absolute bottom-3 left-4 flex gap-2">
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-primary/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Coaching</span>
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-emerald-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Disponible</span>
                     </div>
-                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">person</span>
-                            <span>6 Pers</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">speed</span>
-                            <span>25 kn</span>
-                        </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold text-white mb-1">Vorteq 5.2m</h3>
+                    <p class="text-gray-400 text-xs mb-3">Perfecta para seguimiento cercano y coaching de parejas de 470
+                        y ILCA.</p>
+                    <!-- Specs -->
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">group</span> 6 pers.</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">speed</span> 25 kn</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">straighten</span> 5.2 m</span>
                     </div>
-                    <div class="flex items-center justify-between mt-auto">
+                    <!-- Location -->
+                    <div class="flex items-center gap-1 mb-4 text-xs text-gray-500">
+                        <span class="material-icons text-xs">pin_drop</span> Palma · Barcelona
+                    </div>
+                    <!-- Price + CTAs -->
+                    <div class="mt-auto flex items-center justify-between">
                         <div>
-                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Desde</p>
                             <p class="text-lg font-bold text-primary">€170<span
-                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                                    class="text-sm font-normal text-gray-500">/día</span></p>
                         </div>
-                        <button onclick="window.location.href='screen_3.html'"
-                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
-                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
+                        <div class="flex gap-2">
+                            <a href="screen_3.html"
+                                class="px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs hover:bg-white/10 transition-colors">Ver
+                                detalles</a>
+                            <a href="screen_7.html"
+                                class="px-3 py-2 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-1">Solicitar
+                                <span class="material-icons text-sm">arrow_forward</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Boat Card 2 -->
+
+            <!-- Card: Tornado Coach 6.0m  -->
             <div
-                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
-                <div class="relative aspect-[4/3] overflow-hidden">
-                    <div class="absolute top-3 left-3 z-10">
+                class="group bg-card-dark rounded-2xl border border-white/5 overflow-hidden card-glow transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img alt="Tornado Coach 6.0m — RIB de alto rendimiento para coaching"
+                        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-card-dark/70 to-transparent"></div>
+                    <button onclick="this.querySelector('span').classList.toggle('fav-active')"
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/50 transition-colors"
+                        title="Añadir a favoritos">
+                        <span class="material-symbols-outlined text-white text-xl">favorite</span>
+                    </button>
+                    <div class="absolute bottom-3 left-4 flex gap-2">
                         <span
-                            class="bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Available</span>
-                    </div>
-                    <!-- ... image ... -->
-                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Sleek black VSR 6.0 RIB motorboat at sea"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs");'>
-                    </div>
-                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-3 left-4 text-white">
-                        <span class="text-xs font-medium opacity-80">Yamaha 100hp</span>
+                            class="px-2.5 py-1 rounded-lg bg-primary/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Coaching</span>
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-amber-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-0.5"><span
+                                class="material-icons text-[10px]">star</span> Popular</span>
                     </div>
                 </div>
-                <div class="p-5">
-                    <!-- ... details ... -->
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-lg font-bold leading-tight">Tornado Coach 6.0m</h3>
-                        <div class="flex items-center text-amber-500">
-                            <span class="material-symbols-outlined text-sm">star</span>
-                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">5.0</span>
-                        </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold text-white mb-1">Tornado Coach 6.0m</h3>
+                    <p class="text-gray-400 text-xs mb-3">Ideal para seguimiento de flota y jornadas largas. Motor
+                        potente, mínima estela.</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">group</span> 8 pers.</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">speed</span> 42 kn</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">straighten</span> 6.0 m</span>
                     </div>
-                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">person</span>
-                            <span>8 Pers</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">speed</span>
-                            <span>42 kn</span>
-                        </div>
+                    <div class="flex items-center gap-1 mb-4 text-xs text-gray-500">
+                        <span class="material-icons text-xs">pin_drop</span> Palma · Barcelona · Valencia
                     </div>
-                    <div class="flex items-center justify-between mt-auto">
+                    <div class="mt-auto flex items-center justify-between">
                         <div>
-                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Desde</p>
                             <p class="text-lg font-bold text-primary">€200<span
-                                    class="text-sm font-normal text-slate-500">/day</span></p>
+                                    class="text-sm font-normal text-gray-500">/día</span></p>
                         </div>
-                        <button onclick="window.location.href='screen_3.html'"
-                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
-                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Boat Card 3 -->
-            <div
-                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
-                <!-- ... image ... -->
-                <div class="relative aspect-[4/3] overflow-hidden">
-                    <div class="relative aspect-[4/3] overflow-hidden">
-                        <div class="absolute top-3 right-3 z-10">
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-md text-white hover:bg-primary transition-colors">
-                                <span class="material-symbols-outlined text-xl">favorite</span>
-                            </button>
+                        <div class="flex gap-2">
+                            <a href="screen_3.html"
+                                class="px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs hover:bg-white/10 transition-colors">Ver
+                                detalles</a>
+                            <a href="screen_7.html"
+                                class="px-3 py-2 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-1">Solicitar
+                                <span class="material-icons text-sm">arrow_forward</span></a>
                         </div>
-                        <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="Robust Vanguard 6m RIB rescue boat style"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2WYsF15sIN7Z7_HUF0kpeUBCiRGR5lwM9yI_8uNOEP4vj883unYw0BZKLf_NIe4eplf9fB-2EbNEAijpF26ti5WA0EeIyzg-zOmgNoJvXCSsfpq3wwxZZR4eHirzyYKVgMv2EZT-vdTXLnzsgx-efcvl4n8rbYk7rGubVgFlgg4UCdBRdlTpRR8aI9Wa2xdl863Maif0ShGeHvuf1eAdgFZ1G9K7yHc31mGI_THzrx_51I8aMYa741ZKVqwynQXNQb5JSV3J1css");'>
-                        </div>
-                        <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent">
-                        </div>
-                        <div class="absolute bottom-3 left-4 text-white">
-                            <span class="text-xs font-medium opacity-80">Yamaha 115hp</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-lg font-bold leading-tight">AVA 6.3m</h3>
-                        <div class="flex items-center text-amber-500">
-                            <span class="material-symbols-outlined text-sm">star</span>
-                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">4.8</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">person</span>
-                            <span>10 Pers</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">speed</span>
-                            <span>38 kn</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between mt-auto">
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
-                            <p class="text-lg font-bold text-primary">€220<span
-                                    class="text-sm font-normal text-slate-500">/day</span></p>
-                        </div>
-                        <button onclick="window.location.href='screen_3.html'"
-                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
-                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Boat Card 4 -->
-            <div
-                class="group flex flex-col bg-white dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all duration-300">
-                <div class="relative aspect-[4/3] overflow-hidden">
-                    <div class="absolute top-3 left-3 z-10">
-                        <span
-                            class="bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Available</span>
-                    </div>
-                    <!-- ... image ... -->
-                    <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
-                        data-alt="Sleek black VSR 6.0 RIB motorboat at sea"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs");'>
-                    </div>
-                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-3 left-4 text-white">
-                        <span class="text-xs font-medium opacity-80">Yamaha 150hp</span>
-                    </div>
-                </div>
-                <div class="p-5">
-                    <!-- ... details ... -->
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-lg font-bold leading-tight">VSR 6.5m</h3>
-                        <div class="flex items-center text-amber-500">
-                            <span class="material-symbols-outlined text-sm">star</span>
-                            <span class="text-xs font-bold ml-1 text-slate-600 dark:text-slate-400">5.0</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 mb-6 text-slate-500 dark:text-slate-400 text-sm">
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">person</span>
-                            <span>8 Pers</span>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <span class="material-symbols-outlined text-base">speed</span>
-                            <span>42 kn</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between mt-auto">
-                        <div>
-                            <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Starting at</p>
-                            <p class="text-lg font-bold text-primary">€240<span
-                                    class="text-sm font-normal text-slate-500">/day</span></p>
-                        </div>
-                        <button onclick="window.location.href='screen_3.html'"
-                            class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
-                            Book <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <style>
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
 
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    <!-- ── HIGH-SPEED / SUPPORT ───────────────────────────────── -->
+    <section class="max-w-[1280px] mx-auto w-full px-6 pb-14">
+        <div class="mb-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white mb-1">RIBs High-Speed / Support</h2>
+            <p class="text-gray-400 text-sm">Para soporte rápido, cambios de zona y seguimiento dinámico.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-        .pb-safe {
-            padding-bottom: env(safe-area-inset-bottom);
-        }
+            <!-- Card: AVA 6.3m -->
+            <div
+                class="group bg-card-dark rounded-2xl border border-white/5 overflow-hidden card-glow transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img alt="AVA 6.3m — RIB soporte técnico"
+                        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2WYsF15sIN7Z7_HUF0kpeUBCiRGR5lwM9yI_8uNOEP4vj883unYw0BZKLf_NIe4eplf9fB-2EbNEAijpF26ti5WA0EeIyzg-zOmgNoJvXCSsfpq3wwxZZR4eHirzyYKVgMv2EZT-vdTXLnzsgx-efcvl4n8rbYk7rGubVgFlgg4UCdBRdlTpRR8aI9Wa2xdl863Maif0ShGeHvuf1eAdgFZ1G9K7yHc31mGI_THzrx_51I8aMYa741ZKVqwynQXNQb5JSV3J1css" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-card-dark/70 to-transparent"></div>
+                    <button onclick="this.querySelector('span').classList.toggle('fav-active')"
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/50 transition-colors"
+                        title="Añadir a favoritos">
+                        <span class="material-symbols-outlined text-white text-xl">favorite</span>
+                    </button>
+                    <div class="absolute bottom-3 left-4 flex gap-2">
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-sky-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Support</span>
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-emerald-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Disponible</span>
+                    </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold text-white mb-1">AVA 6.3m</h3>
+                    <p class="text-gray-400 text-xs mb-3">Versatil y robusta para soporte técnico, con espacio para
+                        material y buena estabilidad.</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">group</span> 10 pers.</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">speed</span> 38 kn</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">straighten</span> 6.3 m</span>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4 text-xs text-gray-500">
+                        <span class="material-icons text-xs">pin_drop</span> Palma · Valencia
+                    </div>
+                    <div class="mt-auto flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Desde</p>
+                            <p class="text-lg font-bold text-primary">€220<span
+                                    class="text-sm font-normal text-gray-500">/día</span></p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="screen_3.html"
+                                class="px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs hover:bg-white/10 transition-colors">Ver
+                                detalles</a>
+                            <a href="screen_7.html"
+                                class="px-3 py-2 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-1">Solicitar
+                                <span class="material-icons text-sm">arrow_forward</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        .fill-1 {
-            font-variation-settings: 'FILL' 1;
-        }
-    </style>
+            <!-- Card: VSR 6.5m -->
+            <div
+                class="group bg-card-dark rounded-2xl border border-white/5 overflow-hidden card-glow transition-all duration-300 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img alt="VSR 6.5m — RIB de alta velocidad"
+                        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYXBNrygjGNeOaDA83DzdrYP9s8oc8lcq1U_O42wJ7-T4qIqayrUglp6l2GNNMGnyMxlIFoseaq9FswR3IRwhLBK3FOFL5j262R8PpFtgRcU6y1SxrVoV7B_JfITfm1NlbVVWkXnoJwwl7CITrKRbXj2CdjxicoxazoFnoPrbxAt8cRMohsnssfFMxOd_qqyr8B_oz-LOySmE5rCqL1syCOVsFzC3b5AS92NGuqDFuC2O_fRLfXMAsvJ4kM979V8FDH92EFucmCs" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-card-dark/70 to-transparent"></div>
+                    <button onclick="this.querySelector('span').classList.toggle('fav-active')"
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center hover:bg-black/50 transition-colors"
+                        title="Añadir a favoritos">
+                        <span class="material-symbols-outlined text-white text-xl">favorite</span>
+                    </button>
+                    <div class="absolute bottom-3 left-4 flex gap-2">
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-orange-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">High-Speed</span>
+                        <span
+                            class="px-2.5 py-1 rounded-lg bg-emerald-500/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider">Disponible</span>
+                    </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold text-white mb-1">VSR 6.5m</h3>
+                    <p class="text-gray-400 text-xs mb-3">Máxima velocidad para desplazamientos entre zonas y soporte
+                        dinámico en regata.</p>
+                    <div class="flex items-center gap-4 mb-4 text-sm text-gray-400">
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">group</span> 8 pers.</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">speed</span> 42 kn</span>
+                        <span class="flex items-center gap-1"><span
+                                class="material-icons text-primary text-sm">straighten</span> 6.5 m</span>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4 text-xs text-gray-500">
+                        <span class="material-icons text-xs">pin_drop</span> Palma · Barcelona
+                    </div>
+                    <div class="mt-auto flex items-center justify-between">
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase font-bold tracking-wider">Desde</p>
+                            <p class="text-lg font-bold text-primary">€240<span
+                                    class="text-sm font-normal text-gray-500">/día</span></p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="screen_3.html"
+                                class="px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs hover:bg-white/10 transition-colors">Ver
+                                detalles</a>
+                            <a href="screen_7.html"
+                                class="px-3 py-2 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-xs transition-colors flex items-center gap-1">Solicitar
+                                <span class="material-icons text-sm">arrow_forward</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  5) SECCIÓN ESPECIAL: 470 ZIEGELMAYER (2020)               -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="seccion-470" class="bg-surface-dark border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto w-full px-6 py-16">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                <!-- LEFT: Image + Mini gallery -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="rounded-2xl overflow-hidden mb-3 relative group">
+                        <img id="main470" alt="470 Ziegelmayer 2020 — velero en perfectas condiciones"
+                            class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs1bAuUJkFSFJ3EGpahb4oC6bQwYq5lOIHchj-tcdbGtIqa8uozAgUGWB8kCUC4idE1uCPG0Bk0EuXkMB4apZWIpCeeTJPkdNmdP5EiVw9oxUou1RhHaE6zYiu1ALj-zlWm8DGQ7j4veMTQNbGxthIqq57FcWP2ErBJOuVKNZicgIqr_Oet98Ej8bh51Da6eWc604y7LP7SJnaB3ad26FqiW0kTAAUMiEvfZ-2wL4qWOOUaJ9Gb7xAM4v9a1Y57QB5_11sYiAUtJY" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-dark/40 to-transparent"></div>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
+                            <span class="material-icons text-xs">verified</span> Perfectas condiciones
+                        </span>
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="rounded-xl overflow-hidden border-2 border-primary cursor-pointer h-20">
+                            <img alt="470 Ziegelmayer — vista lateral" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs1bAuUJkFSFJ3EGpahb4oC6bQwYq5lOIHchj-tcdbGtIqa8uozAgUGWB8kCUC4idE1uCPG0Bk0EuXkMB4apZWIpCeeTJPkdNmdP5EiVw9oxUou1RhHaE6zYiu1ALj-zlWm8DGQ7j4veMTQNbGxthIqq57FcWP2ErBJOuVKNZicgIqr_Oet98Ej8bh51Da6eWc604y7LP7SJnaB3ad26FqiW0kTAAUMiEvfZ-2wL4qWOOUaJ9Gb7xAM4v9a1Y57QB5_11sYiAUtJY" />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden border border-white/10 cursor-pointer h-20 hover:border-primary/50 transition-colors">
+                            <img alt="470 Ziegelmayer — detalle cubierta" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2sBRFxc6Y3Jmo4plrhKtq3u8IX1FcBMZfpjuTuPHz8Hth1hL5BzwnO2G6VhfKODPwJa6WmquSQWLg3WsLXVNXQSoT2KgP1Zf8AKitalHWXf5NH1b2DG8YgzTWDTyQhPZPj6L5fawVLc8dDHBDF9hU_LapIQz3TGPiRZkpSIFuvVRlQw_EmTBZK8UA-Ypwf_h4uKXyy8QEjbPDlnxk-DlXunjTDRL8kHWliXe56n1zpkShZtYQ8tZX7SO4ZlSkqEIA9o3d5hOSfgE" />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden border border-white/10 cursor-pointer h-20 hover:border-primary/50 transition-colors">
+                            <img alt="470 Ziegelmayer — navegando" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPyPsQ0pfG6eQvjB6o9d818EgZgY1e5mtNQAim_eGp5nRmzLpGU3VWz_oYLShAc4Y6DPqqC0whM_GLf34Uo35jL0wqjWOcivI4iFbKuVmIIqIZVVb9vmsxKqNZQVDsllWJGbkk0gli_zKdk4feubfe-WTBxhxe8hvnqERedjER5zMRIBdF8KWwdRtzKGrxryATQGDKQK694Gpit7ip_3O0HbDhXfWxjgHzSOczAcjrLUXyizq_wiRogHgHKX3q4LxFcWkcFp04trE" />
+                        </div>
+                        <div
+                            class="rounded-xl overflow-hidden border border-white/10 cursor-pointer h-20 hover:border-primary/50 transition-colors">
+                            <img alt="470 Ziegelmayer — jarcias y aparejo" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3OTXVFTaepkOqm0PUkrrhWMs_LMqTGj9961dzg6C7FJklGy2pmS1K76g1egXg_hGSk9Q4Lz6JTMDbLtw2tdeJ9elxJ0nUEktiSo8rwMDdPU7eotFORIKLlok4jAn-RBpv7vzcGBwOBwa6v0q2ubR8OkiPU4_a0_nbOLWxrFilZk3qPCg5Xo7B-Brnhwt7-NG54mCzteUn0tVcIysIVrS-3Nq9XFUi8fq0ZsTDtOM7kViq4rqyJpdU072XXQh6wqYuhDFoErGyWUo" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Specs & CTAs -->
+                <div class="lg:w-1/2 w-full flex flex-col">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">470 Ziegelmayer (2020)</h2>
+                    <p class="text-gray-400 text-sm mb-6">Velero de clase olímpica en estado impecable. Ideal para
+                        entrenos de alto nivel y regatas competitivas.</p>
+
+                    <!-- Bullets -->
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-card-dark border border-white/5"><span
+                                class="material-icons text-primary">sailing</span>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Clase 470</p>
+                                <p class="text-gray-500 text-xs">Doble trapecio — clase olímpica</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-card-dark border border-white/5"><span
+                                class="material-icons text-primary">calendar_today</span>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Año 2020</p>
+                                <p class="text-gray-500 text-xs">Ziegelmayer, fabricante de referencia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-card-dark border border-white/5"><span
+                                class="material-icons text-primary">verified</span>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Estado impecable</p>
+                                <p class="text-gray-500 text-xs">Mantenimiento profesional continuo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-card-dark border border-white/5"><span
+                                class="material-icons text-primary">inventory_2</span>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Equipo incluido</p>
+                                <p class="text-gray-500 text-xs">Velas, foques, spinnaker y trapecio completo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-xl bg-card-dark border border-white/5"><span
+                                class="material-icons text-primary">emoji_events</span>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Ideal para entreno y regata</p>
+                                <p class="text-gray-500 text-xs">Alto rendimiento en condiciones exigentes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-3">
+                        <a href="screen_7.html"
+                            class="px-6 py-3 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2">
+                            Solicitar disponibilidad <span class="material-icons text-lg">arrow_forward</span>
+                        </a>
+                        <a href="screen_3.html"
+                            class="px-6 py-3 rounded-xl bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 transition-colors">
+                            Ver ficha técnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  6) COMPARACIÓN RÁPIDA (tabla premium)                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="max-w-[1280px] mx-auto w-full px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Comparación rápida</h2>
+            <p class="text-gray-400 text-sm sm:text-base">Con un vistazo, entiende las diferencias</p>
+        </div>
+        <div class="overflow-x-auto hide-scrollbar rounded-2xl border border-white/5">
+            <table class="w-full text-sm min-w-[640px]">
+                <thead>
+                    <tr class="bg-surface-dark border-b border-white/10">
+                        <th class="text-left py-4 px-5 text-gray-400 font-bold text-xs uppercase tracking-wider">Modelo
+                        </th>
+                        <th class="text-left py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">Tipo
+                        </th>
+                        <th class="text-center py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">
+                            Plazas</th>
+                        <th class="text-center py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">
+                            Eslora</th>
+                        <th class="text-center py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">
+                            Velocidad</th>
+                        <th class="text-left py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">Ideal
+                            para</th>
+                        <th class="text-center py-4 px-4 text-gray-400 font-bold text-xs uppercase tracking-wider">
+                            Precio</th>
+                        <th class="py-4 px-4"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                        <td class="py-4 px-5 font-bold text-white">Vorteq 5.2m</td>
+                        <td class="py-4 px-4"><span
+                                class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold">Coaching</span>
+                        </td>
+                        <td class="py-4 px-4 text-center text-gray-300">6</td>
+                        <td class="py-4 px-4 text-center text-gray-300">5.2 m</td>
+                        <td class="py-4 px-4 text-center text-gray-300">25 kn</td>
+                        <td class="py-4 px-4"><span class="text-xs text-gray-400">470 / ILCA</span></td>
+                        <td class="py-4 px-4 text-center text-primary font-bold">€170/día</td>
+                        <td class="py-4 px-4"><a href="screen_3.html"
+                                class="text-primary text-xs font-bold hover:underline">Ver →</a></td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                        <td class="py-4 px-5 font-bold text-white">Tornado 6.0m</td>
+                        <td class="py-4 px-4"><span
+                                class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold">Coaching</span>
+                        </td>
+                        <td class="py-4 px-4 text-center text-gray-300">8</td>
+                        <td class="py-4 px-4 text-center text-gray-300">6.0 m</td>
+                        <td class="py-4 px-4 text-center text-gray-300">42 kn</td>
+                        <td class="py-4 px-4"><span class="text-xs text-gray-400">Flota / jornada larga</span></td>
+                        <td class="py-4 px-4 text-center text-primary font-bold">€200/día</td>
+                        <td class="py-4 px-4"><a href="screen_3.html"
+                                class="text-primary text-xs font-bold hover:underline">Ver →</a></td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                        <td class="py-4 px-5 font-bold text-white">AVA 6.3m</td>
+                        <td class="py-4 px-4"><span
+                                class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-400 text-xs font-bold">Support</span>
+                        </td>
+                        <td class="py-4 px-4 text-center text-gray-300">10</td>
+                        <td class="py-4 px-4 text-center text-gray-300">6.3 m</td>
+                        <td class="py-4 px-4 text-center text-gray-300">38 kn</td>
+                        <td class="py-4 px-4"><span class="text-xs text-gray-400">Soporte técnico</span></td>
+                        <td class="py-4 px-4 text-center text-primary font-bold">€220/día</td>
+                        <td class="py-4 px-4"><a href="screen_3.html"
+                                class="text-primary text-xs font-bold hover:underline">Ver →</a></td>
+                    </tr>
+                    <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                        <td class="py-4 px-5 font-bold text-white">VSR 6.5m</td>
+                        <td class="py-4 px-4"><span
+                                class="px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-400 text-xs font-bold">High-Speed</span>
+                        </td>
+                        <td class="py-4 px-4 text-center text-gray-300">8</td>
+                        <td class="py-4 px-4 text-center text-gray-300">6.5 m</td>
+                        <td class="py-4 px-4 text-center text-gray-300">42 kn</td>
+                        <td class="py-4 px-4"><span class="text-xs text-gray-400">Desplazamiento rápido</span></td>
+                        <td class="py-4 px-4 text-center text-primary font-bold">€240/día</td>
+                        <td class="py-4 px-4"><a href="screen_3.html"
+                                class="text-primary text-xs font-bold hover:underline">Ver →</a></td>
+                    </tr>
+                    <tr class="hover:bg-white/[0.02] transition-colors bg-primary/[0.03]">
+                        <td class="py-4 px-5 font-bold text-white flex items-center gap-2">470 Ziegelmayer <span
+                                class="material-icons text-emerald-400 text-sm">verified</span></td>
+                        <td class="py-4 px-4"><span
+                                class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-bold">Velero</span>
+                        </td>
+                        <td class="py-4 px-4 text-center text-gray-300">2</td>
+                        <td class="py-4 px-4 text-center text-gray-300">4.7 m</td>
+                        <td class="py-4 px-4 text-center text-gray-300">—</td>
+                        <td class="py-4 px-4"><span class="text-xs text-gray-400">Entreno / regata</span></td>
+                        <td class="py-4 px-4 text-center text-primary font-bold">Consultar</td>
+                        <td class="py-4 px-4"><a href="#seccion-470"
+                                class="text-primary text-xs font-bold hover:underline">Ver →</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  7) CTA FINAL — conversión                                 -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-background-dark to-background-dark"></div>
+        <div class="max-w-[1280px] mx-auto w-full px-6 py-20 relative z-10 text-center">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">¿No sabes cuál elegir?</h2>
+            <p class="text-gray-300 text-sm sm:text-base max-w-lg mx-auto mb-8">
+                Dinos evento, fechas y necesidades y te recomendamos la mejor opción para tu equipo.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="screen_7.html"
+                    class="px-7 py-3.5 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center gap-2">
+                    Solicitar recomendación <span class="material-icons text-lg">arrow_forward</span>
+                </a>
+                <a href="screen_7.html"
+                    class="px-7 py-3.5 rounded-xl bg-white/5 border border-white/15 text-white font-semibold text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                    Contactar <span class="material-icons text-lg">mail_outline</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  FOOTER                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <footer class="bg-surface-dark border-t border-white/5 py-8 px-6 mt-auto">
+        <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded bg-primary flex items-center justify-center">
+                    <span class="material-icons text-white text-sm transform -rotate-45">sailing</span>
+                </div>
+                <span class="font-bold text-sm text-white">Coach<span class="text-primary">&</span>Sailor</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-gray-500">
+                <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+                <a href="screen_2.html" class="hover:text-white transition-colors">Cobertura</a>
+                <a href="screen_6.html" class="hover:text-white transition-colors">Eventos</a>
+                <a href="screen_7.html" class="hover:text-white transition-colors">Contacto</a>
+            </div>
+            <p class="text-xs text-gray-600">© 2024 Coach&Sailor</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
