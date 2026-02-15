@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Sailing Events - RIB Rentals</title>
+  <title>Eventos — Coach & Sailor</title>
+  <meta name="description"
+    content="Calendario de regatas y eventos de vela ligera con soporte de neumáticas profesionales. Solicita plaza para tu próximo evento.">
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -23,42 +24,59 @@
             "primary": "#137fec",
             "background-light": "#f6f7f8",
             "background-dark": "#101922",
+            "surface-dark": "#172030",
+            "card-dark": "#1c2530",
           },
           fontFamily: {
             "display": ["Plus Jakarta Sans", "sans-serif"]
           },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
         },
       },
     }
   </script>
   <style>
-    body {
-      font-family: "Plus Jakarta Sans", sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 4px;
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
     }
 
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: transparent;
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #283039;
-      border-radius: 10px;
+    /* Skeleton animation */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
     }
-  </style>
-  <style>
-    body {
-      min-height: max(884px, 100dvh);
+
+    .skeleton {
+      background: linear-gradient(90deg, #1c2530 25%, #253040 50%, #1c2530 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 0.75rem;
+    }
+
+    /* Modal backdrop */
+    .modal-backdrop {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
     }
   </style>
 </head>
 
-<body
-  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">
+<body class="bg-background-dark font-display text-white antialiased min-h-screen flex flex-col">
+
   <!-- ===== TOP NAVIGATION BAR ===== -->
   <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -98,154 +116,543 @@
       </div>
     </div>
   </nav>
-  <!-- Tabs / Categories -->
-  <div class="max-w-2xl mx-auto w-full overflow-x-auto custom-scrollbar">
-    <div class="flex px-4 gap-6">
-      <a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2 shrink-0"
-        href="#">
-        <p class="text-sm font-bold">Todos</p>
-      </a>
-      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
-        href="#">
-        <p class="text-sm font-medium">Palma</p>
-      </a>
-      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
-        href="#">
-        <p class="text-sm font-medium">Barcelona</p>
-      </a>
-      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
-        href="#">
-        <p class="text-sm font-medium">Valencia</p>
-      </a>
-      <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 shrink-0"
-        href="#">
-        <p class="text-sm font-medium">Ibiza</p>
-      </a>
-    </div>
-  </div>
-  </header>
-  <main class="flex-1 max-w-2xl mx-auto w-full p-4 space-y-6">
-    <div class="flex items-center justify-between">
-      <h3 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">Regatas Destacadas</h3>
-      <span
-        class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full uppercase tracking-wider">Temporada
-        2024</span>
-    </div>
-    <!-- Event Card 1 -->
-    <div class="group @container">
-      <div
-        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
-        <div class="relative w-full aspect-[21/9] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-          <div
-            class="absolute top-3 right-3 z-20 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
-            RIBs Disponibles</div>
-          <div
-            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
-            data-alt="Modern sailboat racing on deep blue ocean water"
-            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCESj5RjeO1e7soVVF3iih9ZcDD5IyglCB0kGpbIXYgxOunL_JNwaZoS6zc8MGv39XgVgoRDolPoyfiitQanD6hhXj-RemqgsL82oDHcjAQJEjyWAxFz9F1Mxkl4ZgSI2_iOlCOeb6EKTUw4bbSbseYx-revUHKyfuvxEPiiCZe6Zu-VWgWkEhVCxu5G50MO0WKPu5Cqs6fw4n0JCsa16Fw-lkALdI4N6xsdCtOf0qTnxlh5BejFojh_wR941z9nSDW6X51USVwW40");'>
-          </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  PAGE HEADER + UNIFIED FILTER BAR                       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="border-b border-white/5 bg-surface-dark/50">
+    <div class="max-w-[1280px] mx-auto px-6 pt-8 pb-6">
+      <!-- Page title -->
+      <div class="mb-6">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-1">Calendario de Eventos</h1>
+        <p class="text-gray-400">Encuentra tu próxima regata y solicita plaza para nuestras neumáticas.</p>
+      </div>
+      <!-- Filter row -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <!-- Search -->
+        <div class="relative flex-1 max-w-sm">
+          <span class="material-icons text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 text-xl">search</span>
+          <input id="searchInput" type="text" placeholder="Buscar evento…"
+            class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-background-dark border border-white/10 text-white text-sm placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            oninput="filterEvents()">
         </div>
-        <div class="flex w-full flex-col gap-4 p-5">
-          <div class="flex flex-col gap-1">
-            <p class="text-primary text-xs font-bold uppercase tracking-widest">Olympic Class</p>
-            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Trofeo Princesa Sofía</h4>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">calendar_today</span>
-              <p class="text-sm font-medium leading-none">1 - 6 de Abril, 2024</p>
-            </div>
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">location_on</span>
-              <p class="text-sm font-medium leading-none">Palma de Mallorca, España</p>
-            </div>
-          </div>
-          <button
-            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
-            <span>Reservar para este evento</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
+        <!-- Location tabs as pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto hide-scrollbar" id="locationFilters">
+          <button onclick="setLocation(this, 'all')"
+            class="loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white transition-all">Todos</button>
+          <button onclick="setLocation(this, 'palma')"
+            class="loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all">Palma</button>
+          <button onclick="setLocation(this, 'barcelona')"
+            class="loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all">Barcelona</button>
+          <button onclick="setLocation(this, 'valencia')"
+            class="loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all">Valencia</button>
+          <button onclick="setLocation(this, 'ibiza')"
+            class="loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all">Ibiza</button>
         </div>
+        <!-- Season dropdown -->
+        <select id="seasonFilter" onchange="filterEvents()"
+          class="px-4 py-2.5 rounded-xl bg-background-dark border border-white/10 text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors cursor-pointer">
+          <option value="all">Todas las temporadas</option>
+          <option value="2025">Temporada 2025</option>
+          <option value="2024" selected>Temporada 2024</option>
+        </select>
       </div>
     </div>
-    <!-- Event Card 2 -->
-    <div class="group @container">
-      <div
-        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
-        <div class="relative w-full aspect-[21/9] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  EVENTS GRID                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <main class="flex-1 py-8 px-6">
+    <div class="max-w-[1280px] mx-auto">
+
+      <!-- Events count -->
+      <p class="text-sm text-gray-500 mb-5" id="eventsCount">Mostrando 4 eventos</p>
+
+      <!-- Grid: 2 cols on desktop, 1 on mobile -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="eventsGrid">
+
+        <!-- Event Card 1 — Trofeo Princesa Sofía -->
+        <div class="event-card group" data-location="palma" data-season="2024" data-name="Trofeo Princesa Sofía"
+          data-type="olympic">
           <div
-            class="absolute top-3 right-3 z-20 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
-            Soporte Técnico</div>
-          <div
-            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
-            data-alt="Aerial view of yacht club with many boats"
-            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgWUN4D00J15kDLudQCIM5DJwE6bf-FuzLHbIFnK4aUY4eWA5M1Uh0vYgL28o64acwTESjRRD0IhLnLHpb4yRtsfCd0kvDl-xZHDnOETgaBjOZapleJmyVaGaWnnDKcDoqqTzxdDGSImNRloH7GQy3A9YDqD1Iur9SYs1MPa1ERoR91pdV6mdo1mBcXkpDzlMmYbVhMkCC1A19pjKJTT7AdQwQXdDGuGR4J6odsVnLeh86bDEePmuvEPm-JC0VU104E5EiK7YPBE4");'>
+            class="flex flex-col bg-card-dark rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
+            <!-- Image -->
+            <div class="relative aspect-[2/1] overflow-hidden">
+              <div
+                class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCESj5RjeO1e7soVVF3iih9ZcDD5IyglCB0kGpbIXYgxOunL_JNwaZoS6zc8MGv39XgVgoRDolPoyfiitQanD6hhXj-RemqgsL82oDHcjAQJEjyWAxFz9F1Mxkl4ZgSI2_iOlCOeb6EKTUw4bbSbseYx-revUHKyfuvxEPiiCZe6Zu-VWgWkEhVCxu5G50MO0WKPu5Cqs6fw4n0JCsa16Fw-lkALdI4N6xsdCtOf0qTnxlh5BejFojh_wR941z9nSDW6X51USVwW40");'>
+              </div>
+              <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-card-dark to-transparent"></div>
+              <span
+                class="absolute top-3 right-3 bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg">RIBs
+                Disponibles</span>
+            </div>
+            <!-- Content -->
+            <div class="p-5 flex flex-col gap-3">
+              <!-- Chips -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Olympic
+                  Class</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">Soporte
+                  técnico</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">6 plazas</span>
+              </div>
+              <!-- Title -->
+              <h3 class="text-xl font-bold text-white leading-tight">Trofeo Princesa Sofía</h3>
+              <!-- Meta -->
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">calendar_today</span>
+                  <span class="text-sm font-medium">1 – 6 Abr 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">location_on</span>
+                  <span class="text-sm font-medium">Palma de Mallorca, España</span>
+                </div>
+              </div>
+              <!-- Key info -->
+              <div class="flex items-center gap-4 text-sm text-gray-400 pt-2 border-t border-white/5">
+                <span class="flex items-center gap-1"><span class="material-icons text-base">schedule</span> 6
+                  días</span>
+                <span class="flex items-center gap-1"><span class="material-icons text-base">emoji_events</span> Nivel
+                  olímpico</span>
+              </div>
+              <!-- CTA -->
+              <button onclick="openModal('Trofeo Princesa Sofía', '1 – 6 Abr 2024', 'Palma de Mallorca, España')"
+                class="w-full mt-1 py-3 rounded-xl bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-primary/15">
+                <span>Solicitar plaza</span>
+                <span class="material-icons text-base">arrow_forward</span>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="flex w-full flex-col gap-4 p-5">
-          <div class="flex flex-col gap-1">
-            <p class="text-primary text-xs font-bold uppercase tracking-widest">Major Event</p>
-            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Copa del Rey MAPFRE</h4>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">calendar_today</span>
-              <p class="text-sm font-medium leading-none">27 Julio - 3 Agosto, 2024</p>
+
+        <!-- Event Card 2 — Copa del Rey MAPFRE -->
+        <div class="event-card group" data-location="palma" data-season="2024" data-name="Copa del Rey MAPFRE"
+          data-type="major">
+          <div
+            class="flex flex-col bg-card-dark rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
+            <div class="relative aspect-[2/1] overflow-hidden">
+              <div
+                class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgWUN4D00J15kDLudQCIM5DJwE6bf-FuzLHbIFnK4aUY4eWA5M1Uh0vYgL28o64acwTESjRRD0IhLnLHpb4yRtsfCd0kvDl-xZHDnOETgaBjOZapleJmyVaGaWnnDKcDoqqTzxdDGSImNRloH7GQy3A9YDqD1Iur9SYs1MPa1ERoR91pdV6mdo1mBcXkpDzlMmYbVhMkCC1A19pjKJTT7AdQwQXdDGuGR4J6odsVnLeh86bDEePmuvEPm-JC0VU104E5EiK7YPBE4");'>
+              </div>
+              <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-card-dark to-transparent"></div>
+              <span
+                class="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg">Soporte
+                Técnico</span>
             </div>
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">location_on</span>
-              <p class="text-sm font-medium leading-none">Real Club Náutico de Palma, España</p>
+            <div class="p-5 flex flex-col gap-3">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Major
+                  Event</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">RIB
+                  disponible</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">4 plazas</span>
+              </div>
+              <h3 class="text-xl font-bold text-white leading-tight">Copa del Rey MAPFRE</h3>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">calendar_today</span>
+                  <span class="text-sm font-medium">27 Jul – 3 Ago 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">location_on</span>
+                  <span class="text-sm font-medium">Palma de Mallorca, España</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-400 pt-2 border-t border-white/5">
+                <span class="flex items-center gap-1"><span class="material-icons text-base">schedule</span> 8
+                  días</span>
+                <span class="flex items-center gap-1"><span class="material-icons text-base">emoji_events</span> Alta
+                  competición</span>
+              </div>
+              <button onclick="openModal('Copa del Rey MAPFRE', '27 Jul – 3 Ago 2024', 'Palma de Mallorca, España')"
+                class="w-full mt-1 py-3 rounded-xl bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-primary/15">
+                <span>Solicitar plaza</span>
+                <span class="material-icons text-base">arrow_forward</span>
+              </button>
             </div>
           </div>
-          <button
-            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
-            <span>Reservar para este evento</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
         </div>
+
+        <!-- Event Card 3 — ORC World Championship -->
+        <div class="event-card group" data-location="barcelona" data-season="2024" data-name="ORC World Championship"
+          data-type="world">
+          <div
+            class="flex flex-col bg-card-dark rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
+            <div class="relative aspect-[2/1] overflow-hidden">
+              <div
+                class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs1YmzCLOeaB-6SPWNhL4bi2ZuVx94wnkF1oYByMjAhOBjcjpqOq87sD00b3gVVggT-pIEn06zP1-HAif4qo3OFGCUHPzyroas2GCUXdCrGahJN_gCRhb9l4ceS2s34SrbmgeacRCwuPjsLL6LNn36sxh_9BZLwKTdaUEBqxRJLRLzFUHH0jgBEJUcJHtSLdLUREq2or4ekjDNPujwpZl7mBGZ5-sxOb24UdGMUSIXcCo61uImpLIenakBHLKYB4NzYYhjvujPypM");'>
+              </div>
+              <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-card-dark to-transparent"></div>
+              <span
+                class="absolute top-3 right-3 bg-amber-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg">Pocas
+                Plazas</span>
+            </div>
+            <div class="p-5 flex flex-col gap-3">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">World
+                  Championship</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">Soporte
+                  técnico</span>
+                <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-semibold">2
+                  plazas</span>
+              </div>
+              <h3 class="text-xl font-bold text-white leading-tight">ORC World Championship</h3>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">calendar_today</span>
+                  <span class="text-sm font-medium">20 – 27 Sep 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">location_on</span>
+                  <span class="text-sm font-medium">Barcelona, España</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-400 pt-2 border-t border-white/5">
+                <span class="flex items-center gap-1"><span class="material-icons text-base">schedule</span> 8
+                  días</span>
+                <span class="flex items-center gap-1"><span class="material-icons text-base">emoji_events</span>
+                  Campeonato mundial</span>
+              </div>
+              <button onclick="openModal('ORC World Championship', '20 – 27 Sep 2024', 'Barcelona, España')"
+                class="w-full mt-1 py-3 rounded-xl bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-primary/15">
+                <span>Solicitar plaza</span>
+                <span class="material-icons text-base">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 4 — Valencia Sailing Week -->
+        <div class="event-card group" data-location="valencia" data-season="2024" data-name="Valencia Sailing Week"
+          data-type="major">
+          <div
+            class="flex flex-col bg-card-dark rounded-2xl overflow-hidden border border-white/5 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300">
+            <div class="relative aspect-[2/1] overflow-hidden">
+              <div
+                class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCESj5RjeO1e7soVVF3iih9ZcDD5IyglCB0kGpbIXYgxOunL_JNwaZoS6zc8MGv39XgVgoRDolPoyfiitQanD6hhXj-RemqgsL82oDHcjAQJEjyWAxFz9F1Mxkl4ZgSI2_iOlCOeb6EKTUw4bbSbseYx-revUHKyfuvxEPiiCZe6Zu-VWgWkEhVCxu5G50MO0WKPu5Cqs6fw4n0JCsa16Fw-lkALdI4N6xsdCtOf0qTnxlh5BejFojh_wR941z9nSDW6X51USVwW40");'>
+              </div>
+              <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-card-dark to-transparent"></div>
+              <span
+                class="absolute top-3 right-3 bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg">RIBs
+                Disponibles</span>
+            </div>
+            <div class="p-5 flex flex-col gap-3">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-2.5 py-1 rounded-lg bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Major
+                  Event</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">RIB
+                  disponible</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-semibold">8 plazas</span>
+              </div>
+              <h3 class="text-xl font-bold text-white leading-tight">Valencia Sailing Week</h3>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">calendar_today</span>
+                  <span class="text-sm font-medium">15 – 20 Oct 2024</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300">
+                  <span class="material-icons text-base text-gray-500">location_on</span>
+                  <span class="text-sm font-medium">Valencia, España</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 text-sm text-gray-400 pt-2 border-t border-white/5">
+                <span class="flex items-center gap-1"><span class="material-icons text-base">schedule</span> 6
+                  días</span>
+                <span class="flex items-center gap-1"><span class="material-icons text-base">emoji_events</span> Alta
+                  competición</span>
+              </div>
+              <button onclick="openModal('Valencia Sailing Week', '15 – 20 Oct 2024', 'Valencia, España')"
+                class="w-full mt-1 py-3 rounded-xl bg-primary hover:bg-blue-600 active:bg-blue-700 text-white text-sm font-bold transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-primary/15">
+                <span>Solicitar plaza</span>
+                <span class="material-icons text-base">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <!-- Event Card 3 -->
-    <div class="group @container">
-      <div
-        class="flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-white dark:bg-[#1c2127] border border-slate-200 dark:border-slate-800 transition-all hover:border-primary/50">
-        <div class="relative w-full aspect-[21/9] overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-          <div
-            class="absolute top-3 right-3 z-20 bg-slate-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">
-            Pocas Plazas</div>
-          <div
-            class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
-            data-alt="Luxury sailing yacht in open ocean"
-            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs1YmzCLOeaB-6SPWNhL4bi2ZuVx94wnkF1oYByMjAhOBjcjpqOq87sD00b3gVVggT-pIEn06zP1-HAif4qo3OFGCUHPzyroas2GCUXdCrGahJN_gCRhb9l4ceS2s34SrbmgeacRCwuPjsLL6LNn36sxh_9BZLwKTdaUEBqxRJLRLzFUHH0jgBEJUcJHtSLdLUREq2or4ekjDNPujwpZl7mBGZ5-sxOb24UdGMUSIXcCo61uImpLIenakBHLKYB4NzYYhjvujPypM");'>
-          </div>
+
+      <!-- Empty state (hidden by default) -->
+      <div id="emptyState" class="hidden py-20 text-center">
+        <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4">
+          <span class="material-icons text-3xl text-gray-600">search_off</span>
         </div>
-        <div class="flex w-full flex-col gap-4 p-5">
-          <div class="flex flex-col gap-1">
-            <p class="text-primary text-xs font-bold uppercase tracking-widest">World Championship</p>
-            <h4 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">ORC World Championship</h4>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">calendar_today</span>
-              <p class="text-sm font-medium leading-none">20 - 27 Septiembre, 2024</p>
-            </div>
-            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-              <span class="material-symbols-outlined text-lg">location_on</span>
-              <p class="text-sm font-medium leading-none">Barcelona, España</p>
-            </div>
-          </div>
-          <button
-            class="w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 active:scale-[0.98] flex gap-2">
-            <span>Reservar para este evento</span>
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </div>
+        <h3 class="text-lg font-bold text-white mb-2">No se encontraron eventos</h3>
+        <p class="text-gray-500 mb-5">Prueba con otros filtros o palabras clave.</p>
+        <button onclick="clearFilters()"
+          class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-sm hover:bg-white/10 transition-colors">
+          Limpiar filtros
+        </button>
       </div>
+
     </div>
   </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  REQUEST MODAL                                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="requestModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 modal-backdrop"
+    onclick="if(event.target===this)closeModal()">
+    <div
+      class="bg-surface-dark border border-white/10 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl"
+      onclick="event.stopPropagation()">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between p-6 pb-0">
+        <h2 class="text-xl font-bold text-white">Solicitar plaza</h2>
+        <button onclick="closeModal()"
+          class="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+          <span class="material-icons text-xl">close</span>
+        </button>
+      </div>
+      <!-- Event summary -->
+      <div class="mx-6 mt-4 p-4 rounded-xl bg-background-dark border border-white/5">
+        <p class="text-xs text-gray-500 uppercase tracking-wider font-bold mb-1">Solicitud para</p>
+        <p class="text-white font-bold text-lg" id="modalEventName">—</p>
+        <div class="flex flex-wrap gap-3 mt-2 text-sm text-gray-400">
+          <span class="flex items-center gap-1"><span class="material-icons text-sm text-gray-600">calendar_today</span>
+            <span id="modalEventDate">—</span></span>
+          <span class="flex items-center gap-1"><span class="material-icons text-sm text-gray-600">location_on</span>
+            <span id="modalEventLocation">—</span></span>
+        </div>
+      </div>
+      <!-- Form -->
+      <form id="requestForm" class="p-6 flex flex-col gap-5" onsubmit="submitForm(event)">
+        <input type="hidden" id="formEventName">
+        <!-- Date range -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-300 mb-1.5" for="dateStart">Fecha inicio *</label>
+            <input id="dateStart" type="date" required
+              class="w-full px-4 py-3 rounded-xl bg-background-dark border border-white/10 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-300 mb-1.5" for="dateEnd">Fecha fin *</label>
+            <input id="dateEnd" type="date" required
+              class="w-full px-4 py-3 rounded-xl bg-background-dark border border-white/10 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+            <p id="dateError" class="text-red-400 text-xs mt-1 hidden">La fecha fin debe ser igual o posterior a la
+              fecha de inicio.</p>
+          </div>
+        </div>
+        <!-- Boat count -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-300 mb-1.5" for="boatCount">Nº de lanchas *</label>
+          <input id="boatCount" type="number" min="1" step="1" value="1" required
+            class="w-full px-4 py-3 rounded-xl bg-background-dark border border-white/10 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+        </div>
+        <!-- Class -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-300 mb-1.5" for="boatClass">Clase *</label>
+          <select id="boatClass" required
+            class="w-full px-4 py-3 rounded-xl bg-background-dark border border-white/10 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors cursor-pointer">
+            <option value="">Seleccionar clase…</option>
+            <option value="optimist">Optimist</option>
+            <option value="laser">ILCA (Laser)</option>
+            <option value="420">420</option>
+            <option value="470">470</option>
+            <option value="49er">49er / 49erFX</option>
+            <option value="nacra17">Nacra 17</option>
+            <option value="windsurf">Windsurf / iQFOiL</option>
+            <option value="kite">Kite / Formula Kite</option>
+            <option value="other">Otra / No estoy seguro</option>
+          </select>
+        </div>
+        <!-- Comments -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-300 mb-1.5" for="comments">Comentarios (opcional)</label>
+          <textarea id="comments" rows="2" placeholder="Necesidades especiales, nº participantes…"
+            class="w-full px-4 py-3 rounded-xl bg-background-dark border border-white/10 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"></textarea>
+        </div>
+        <!-- Submit -->
+        <button type="submit" id="submitBtn"
+          class="w-full py-3.5 rounded-xl bg-primary hover:bg-blue-600 active:bg-blue-700 text-white font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+          <span id="submitText">Enviar solicitud</span>
+          <span class="material-icons text-lg" id="submitIcon">send</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  CONFIRMATION MODAL                                     -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="confirmModal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 modal-backdrop"
+    onclick="if(event.target===this)closeConfirm()">
+    <div class="bg-surface-dark border border-white/10 rounded-2xl w-full max-w-sm p-8 text-center shadow-2xl"
+      onclick="event.stopPropagation()">
+      <div class="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
+        <span class="material-icons text-3xl text-emerald-400">check_circle</span>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-2">¡Solicitud enviada!</h3>
+      <p class="text-gray-400 text-sm mb-6">Te contactaremos en menos de 24 horas para confirmar disponibilidad y
+        presupuesto.</p>
+      <button onclick="closeConfirm()"
+        class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 transition-colors">
+        Cerrar
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  FOOTER                                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="bg-surface-dark border-t border-white/5 py-8 px-6">
+    <div class="max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded bg-primary flex items-center justify-center">
+          <span class="material-icons text-white text-sm transform -rotate-45">sailing</span>
+        </div>
+        <span class="font-bold text-sm text-white">Coach<span class="text-primary">&</span>Sailor</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="screen_5.html" class="hover:text-white transition-colors">Flota</a>
+        <a href="screen_2.html" class="hover:text-white transition-colors">Cobertura</a>
+        <a href="screen_7.html" class="hover:text-white transition-colors">Contacto</a>
+      </div>
+      <p class="text-xs text-gray-600">© 2024 Coach&Sailor</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  JAVASCRIPT                                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <script>
+    // ── State ──
+    let currentLocation = 'all';
+
+    // ── Filter logic ──
+    function setLocation(btn, loc) {
+      currentLocation = loc;
+      document.querySelectorAll('.loc-pill').forEach(p => {
+        p.className = 'loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all';
+      });
+      btn.className = 'loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white transition-all';
+      filterEvents();
+    }
+
+    function filterEvents() {
+      const search = document.getElementById('searchInput').value.toLowerCase().trim();
+      const season = document.getElementById('seasonFilter').value;
+      const cards = document.querySelectorAll('.event-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchLoc = currentLocation === 'all' || card.dataset.location === currentLocation;
+        const matchSeason = season === 'all' || card.dataset.season === season;
+        const matchSearch = !search || card.dataset.name.toLowerCase().includes(search);
+
+        if (matchLoc && matchSeason && matchSearch) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('eventsCount').textContent = visible === 1
+        ? 'Mostrando 1 evento'
+        : `Mostrando ${visible} eventos`;
+
+      document.getElementById('emptyState').classList.toggle('hidden', visible > 0);
+      document.getElementById('eventsGrid').classList.toggle('hidden', visible === 0);
+    }
+
+    function clearFilters() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('seasonFilter').value = '2024';
+      currentLocation = 'all';
+      const pills = document.querySelectorAll('.loc-pill');
+      pills.forEach((p, i) => {
+        if (i === 0) p.className = 'loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white transition-all';
+        else p.className = 'loc-pill shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/5 text-gray-400 border border-white/10 hover:border-primary/30 hover:text-white transition-all';
+      });
+      filterEvents();
+    }
+
+    // ── Modal logic ──
+    function openModal(name, date, location) {
+      document.getElementById('modalEventName').textContent = name;
+      document.getElementById('modalEventDate').textContent = date;
+      document.getElementById('modalEventLocation').textContent = location;
+      document.getElementById('formEventName').value = name;
+      // Reset form
+      document.getElementById('dateStart').value = '';
+      document.getElementById('dateEnd').value = '';
+      document.getElementById('boatCount').value = 1;
+      document.getElementById('boatClass').value = '';
+      document.getElementById('comments').value = '';
+      document.getElementById('dateError').classList.add('hidden');
+      document.getElementById('submitText').textContent = 'Enviar solicitud';
+      document.getElementById('submitIcon').textContent = 'send';
+      document.getElementById('submitBtn').disabled = false;
+      // Show
+      const modal = document.getElementById('requestModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('requestModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const start = document.getElementById('dateStart').value;
+      const end = document.getElementById('dateEnd').value;
+      const errEl = document.getElementById('dateError');
+
+      // Validate date range
+      if (start && end && end < start) {
+        errEl.classList.remove('hidden');
+        return;
+      }
+      errEl.classList.add('hidden');
+
+      // Loading state
+      const btn = document.getElementById('submitBtn');
+      const txt = document.getElementById('submitText');
+      const ico = document.getElementById('submitIcon');
+      btn.disabled = true;
+      txt.textContent = 'Enviando…';
+      ico.textContent = 'hourglass_empty';
+
+      // Simulate send
+      setTimeout(() => {
+        closeModal();
+        // Show confirmation
+        const confirm = document.getElementById('confirmModal');
+        confirm.classList.remove('hidden');
+        confirm.classList.add('flex');
+      }, 1200);
+    }
+
+    function closeConfirm() {
+      const confirm = document.getElementById('confirmModal');
+      confirm.classList.add('hidden');
+      confirm.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  </script>
+
 </body>
 
 </html>
